@@ -22,7 +22,16 @@ public struct Config {
   public static var tabsToShow: [GalleryTab] = [.imageTab, .cameraTab, .videoTab]
   // Defaults to cameraTab if present, or whatever tab is first if cameraTab isn't present.
   public static var initialTab: GalleryTab?
-  
+
+
+  public enum CameraInput {
+    case front
+    case back
+  }
+
+  // Defaults to camera device input.
+  public static var initialCameraInput: CameraInput = .back
+
   public enum GalleryTab {
     case imageTab
     case cameraTab
@@ -51,7 +60,7 @@ public struct Config {
     }
     
     public static var imageLimit: Int = 0
-    
+
   }
 
   public struct Grid {

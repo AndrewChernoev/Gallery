@@ -78,7 +78,16 @@ class CameraMan {
     // Devices
     setupDevices()
 
-    guard let input = backCamera, let output = stillImageOutput else { return }
+    let deviceInput: AVCaptureDeviceInput?
+
+    switch Config.initialCameraInput {
+    case .back:
+        deviceInput = backCamera
+    case .front:
+        deviceInput = frontCamera
+    }
+
+    guard let input = deviceInput, let output = stillImageOutput else { return }
 
     addInput(input)
 
