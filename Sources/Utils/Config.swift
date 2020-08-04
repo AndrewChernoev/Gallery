@@ -52,6 +52,8 @@ public struct Config {
     
     public static var imageLimit: Int = 0
 
+    public static var imageOverwrite: Bool = false
+
     public enum CameraInput {
       case front
       case back
