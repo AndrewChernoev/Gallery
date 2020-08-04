@@ -80,7 +80,7 @@ class CameraMan {
 
     let deviceInput: AVCaptureDeviceInput?
 
-    switch Config.initialCameraInput {
+    switch Config.Camera.initialInput {
     case .back:
         deviceInput = backCamera
     case .front:
